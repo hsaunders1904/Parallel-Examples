@@ -26,3 +26,8 @@ target_compile_options("OpenMP-Pi" PUBLIC ${OpenMP_CXX_FLAGS})
 add_executable("OpenMP-Reduce" OpenMPReduce.cpp)
 target_link_libraries("OpenMP-Reduce" PUBLIC ${OpenMP_CXX_LIBRARIES})
 target_compile_options("OpenMP-Reduce" PUBLIC ${OpenMP_CXX_FLAGS})
+
+# OpenMP tasks Fibonacci example
+add_executable("Fibonacci-OpenMP" fibonacci.cpp)
+target_link_libraries("Fibonacci-OpenMP" PUBLIC ${OpenMP_CXX_LIBRARIES})
+target_compile_options("Fibonacci-OpenMP" PUBLIC ${OpenMP_CXX_FLAGS})
