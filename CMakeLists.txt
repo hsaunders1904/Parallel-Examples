@@ -41,3 +41,7 @@ target_link_libraries("MPI-Get-Count" PRIVATE MPI::MPI_CXX)
 # OpenMPI MPI_Probe example
 add_executable("MPI-Probe" MPIGetCount)
 target_link_libraries("MPI-Probe" PRIVATE MPI::MPI_CXX)
+
+# Add MPI random walk example
+add_executable("MPI-Random-Walk" MPIRandomWalk)
+target_link_libraries("MPI-Random-Walk" PRIVATE MPI::MPI_CXX)
