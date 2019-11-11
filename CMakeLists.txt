@@ -12,36 +12,36 @@ else()
 endif()
 
 # Hello-World executable
-add_executable("Hello-World" MPIHelloWorld.cpp)
-target_link_libraries("Hello-World" PRIVATE MPI::MPI_CXX)
+add_executable("MPI-Hello-World" MPI-HelloWorld.cpp)
+target_link_libraries("MPI-Hello-World" PRIVATE MPI::MPI_CXX)
 
 # Send-Receive executable
-add_executable("Send-Receive" MPISendReceive.cpp)
-target_link_libraries("Send-Receive" PRIVATE MPI::MPI_CXX)
+add_executable("MPI-Send-Receive" MPI-SendReceive.cpp)
+target_link_libraries("MPI-Send-Receive" PRIVATE MPI::MPI_CXX)
 
 # OpenMP Pi calculation executable
-add_executable("OpenMP-Pi" OpenMPPi.cpp)
+add_executable("OpenMP-Pi" OpenMP-Pi.cpp)
 target_link_libraries("OpenMP-Pi" PRIVATE OpenMP::OpenMP_CXX)
 
 # OpenMP Pi Reduce executable
-add_executable("OpenMP-Reduce" OpenMPReduce.cpp)
+add_executable("OpenMP-Reduce" OpenMP-Reduce.cpp)
 target_link_libraries("OpenMP-Reduce" PRIVATE OpenMP::OpenMP_CXX)
 
 # OpenMP tasks Fibonacci example
 # OpenMP task directives only available on v3.0 and upward
 if(OpenMP::OpenMP_VERSION GREATER_EQUAL 3)
-  add_executable("Fibonacci-OpenMP" fibonacci.cpp)
-  target_link_libraries("Fibonacci-OpenMP" PRIVATE OpenMP::OpenMP_CXX)
+  add_executable("OpenMP-Fibonacci" OpenMP-Fibonacci.cpp)
+  target_link_libraries("OpenMP-Fibonacci" PRIVATE OpenMP::OpenMP_CXX)
 endif()
 
 # OpenMPI MPI_Get_Count example
-add_executable("MPI-Get-Count" MPIGetCount)
+add_executable("MPI-Get-Count" MPI-GetCount)
 target_link_libraries("MPI-Get-Count" PRIVATE MPI::MPI_CXX)
 
 # OpenMPI MPI_Probe example
-add_executable("MPI-Probe" MPIGetCount)
+add_executable("MPI-Probe" MPI-GetCount)
 target_link_libraries("MPI-Probe" PRIVATE MPI::MPI_CXX)
 
 # Add MPI random walk example
-add_executable("MPI-Random-Walk" MPIRandomWalk)
+add_executable("MPI-Random-Walk" MPI-RandomWalk)
 target_link_libraries("MPI-Random-Walk" PRIVATE MPI::MPI_CXX)
